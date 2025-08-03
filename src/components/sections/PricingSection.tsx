@@ -88,14 +88,14 @@ const PricingSection = () => {
               >
                 {plan.featured && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-accent text-white px-4 py-2">
+                    <Badge className="bg-accent text-black px-4 py-2">
                       Most Popular
                     </Badge>
                   </div>
                 )}
                 <CardHeader className="text-center">
                   <h3 className="text-2xl font-bold text-black">{plan.name}</h3>
-                  <p className="text-accent text-3xl font-bold">{plan.price}</p>
+                  <p className="text-black text-3xl font-bold">{plan.price}</p>
                   <p className="text-gray-700">{plan.description}</p>
                 </CardHeader>
                 <CardContent>

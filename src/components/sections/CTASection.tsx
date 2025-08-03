@@ -27,7 +27,10 @@ const CTASection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Button size="lg" className="bg-accent hover:bg-accent/90">
+            <Button
+              size="lg"
+              className="bg-accent text-black hover:bg-accent/90"
+            >
               Start Free Trial
             </Button>
             <Button size="lg" variant="outline">
