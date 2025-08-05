@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
@@ -15,7 +16,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.h1
-              className="text-5xl lg:text-6xl font-bold text-black leading-tight"
+              className="text-5xl lg:text-6xl font-bold text-[#2a2d34] leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -23,7 +24,7 @@ const HeroSection = () => {
               Here&apos;s who my child is today. Help us grow together.
             </motion.h1>
             <motion.p
-              className="text-xl text-gray-800 leading-relaxed"
+              className="text-xl text-[#2a2d34]/80 leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -39,14 +40,21 @@ const HeroSection = () => {
             >
               <Button
                 size="lg"
-                className="bg-accent text-black hover:bg-accent/90"
+                className="bg-[#f8845b] text-white hover:bg-[#f8845b]/90"
               >
                 Book a Demo
               </Button>
-              <Button size="lg" variant="outline">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#2a2d34] text-[#2a2d34] hover:bg-[#2a2d34] hover:text-white"
+              >
                 Explore Features
               </Button>
-              <Button size="lg" variant="secondary">
+              <Button
+                size="lg"
+                className="bg-[#f4b75a] text-[#2a2d34] hover:bg-[#f4b75a]/90"
+              >
                 Try Free for 30 Days
               </Button>
             </motion.div>
@@ -57,39 +65,23 @@ const HeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
+      
+      
             <motion.div
-              className="bg-white rounded-2xl p-8 shadow-2xl"
+              className="bg-white rounded-2xl p-4 md:p-8 shadow-2xl border border-gray-100 flex items-center justify-center aspect-square max-w-[500px] mx-auto"
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="bg-gradient-to-br from-blue-50 to-accent/10 rounded-xl p-6">
-                <div className="flex items-center justify-center space-x-4">
-                  <motion.div
-                    className="w-16 h-16 bg-accent rounded-full flex items-center justify-center"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white text-2xl">👶</span>
-                  </motion.div>
-                  <motion.div
-                    className="w-12 h-12 bg-accent-3 rounded-full flex items-center justify-center"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white text-xl">📱</span>
-                  </motion.div>
-                  <motion.div
-                    className="w-14 h-14 bg-accent-2 rounded-full flex items-center justify-center"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="text-white text-xl">⌚</span>
-                  </motion.div>
-                </div>
-                <p className="text-center mt-4 text-slate-700 font-medium">
-                  A smiling child interacts with a tablet and wearable device,
-                  surrounded by supportive adults.
-                </p>
+              <div className="w-full h-full relative">
+                <Image
+                  src="/images/hero-image.png"
+                  alt="Illustration of a happy, neurodiverse child and caregivers"
+                  fill
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 500px"
+                  className="object-contain"
+                  priority
+                  loading="eager"
+                />
               </div>
             </motion.div>
           </motion.div>

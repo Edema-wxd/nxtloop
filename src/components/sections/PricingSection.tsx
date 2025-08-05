@@ -21,6 +21,7 @@ const PricingSection = () => {
       ],
       cta: "Get Started Free",
       variant: "outline" as const,
+      color: "border-[#c5d4c1]",
     },
     {
       name: "Pro Plan",
@@ -38,6 +39,7 @@ const PricingSection = () => {
       cta: "Start Pro Trial",
       variant: "default" as const,
       featured: true,
+      color: "border-[#f8845b]",
     },
     {
       name: "Enterprise",
@@ -53,6 +55,7 @@ const PricingSection = () => {
       ],
       cta: "Contact Sales",
       variant: "outline" as const,
+      color: "border-[#9f6b99]",
     },
   ];
 
@@ -66,8 +69,10 @@ const PricingSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-black mb-6">Pricing Plans</h2>
-          <p className="text-xl text-gray-800">
+          <h2 className="text-4xl font-bold text-[#2a2d34] mb-6">
+            Pricing Plans
+          </h2>
+          <p className="text-xl text-[#2a2d34]/80">
             Try Nestloop free for 30 days. Cancel anytime.
           </p>
         </motion.div>
@@ -82,37 +87,69 @@ const PricingSection = () => {
               viewport={{ once: true }}
             >
               <Card
-                className={`relative ${
-                  plan.featured ? "ring-2 ring-accent" : ""
+                className={`relative bg-white border-2 ${
+                  plan.color
+                } shadow-sm hover:shadow-md transition-all duration-300 ${
+                  plan.featured ? "ring-2 ring-[#f8845b] scale-105" : ""
                 }`}
               >
                 {plan.featured && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-accent text-black px-4 py-2">
+                    <Badge className="bg-[#f8845b] text-white px-4 py-2">
                       Most Popular
                     </Badge>
                   </div>
                 )}
-                <CardHeader className="text-center">
-                  <h3 className="text-2xl font-bold text-black">{plan.name}</h3>
-                  <p className="text-black text-3xl font-bold">{plan.price}</p>
-                  <p className="text-gray-700">{plan.description}</p>
+                <CardHeader className="text-center pb-4">
+                  <h3 className="text-2xl font-bold text-[#2a2d34]">
+                    {plan.name}
+                  </h3>
+                  <div className="flex items-baseline justify-center gap-1">
+                    {plan.price === "Free" ? (
+                      <p className="text-[#2a2d34] text-3xl font-bold">Free</p>
+                    ) : plan.price === "Custom" ? (
+                      <p className="text-[#2a2d34] text-3xl font-bold">
+                        Custom
+                      </p>
+                    ) : (
+                      <>
+                        <span className="text-[#2a2d34] text-lg font-medium">
+                          £
+                        </span>
+                        <p className="text-[#2a2d34] text-3xl font-bold">
+                          {plan.price}
+                        </p>
+                      </>
+                    )}
+                  </div>
+                  <p className="text-[#2a2d34]/80 text-sm">
+                    {plan.description}
+                  </p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, featureIndex) => (
                       <li
                         key={featureIndex}
-                        className="flex items-center space-x-3"
+                        className="flex items-start space-x-3"
                       >
-                        <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center">
-                          <span className="text-white text-xs">✓</span>
+                        <div className="w-5 h-5 bg-[#c5d4c1] rounded-full flex items-center justify-center mt-0.5">
+                          <span className="text-[#2a2d34] text-xs">✓</span>
                         </div>
-                        <span className="text-gray-700 text-sm">{feature}</span>
+                        <span className="text-[#2a2d34]/80 text-sm leading-relaxed">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
-                  <Button variant={plan.variant} className="w-full">
+                  <Button
+                    variant={plan.variant}
+                    className={`w-full ${
+                      plan.variant === "outline"
+                        ? "border-[#2a2d34] text-[#2a2d34] hover:bg-[#2a2d34] hover:text-white"
+                        : "bg-[#f8845b] text-white hover:bg-[#f8845b]/90"
+                    }`}
+                  >
                     {plan.cta}
                   </Button>
                 </CardContent>

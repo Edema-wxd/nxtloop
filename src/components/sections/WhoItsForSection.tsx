@@ -7,25 +7,25 @@ const WhoItsForSection = () => {
   const userTypes = [
     {
       title: "Children&apos;s Home Staff",
-      icon: "",
-      color: "bg-accent",
+      icon: "🏠",
+      color: "bg-[#f4b75a]/20",
     },
-    { title: "Foster Carers", icon: "👨‍‍‍👦", color: "bg-accent-2" },
-    { title: "SENCOs & Schools", icon: "🎓", color: "bg-accent-3" },
+    { title: "Foster Carers", icon: "👨‍👦", color: "bg-[#c5d4c1]/20" },
+    { title: "SENCOs & Schools", icon: "🎓", color: "bg-[#9f6b99]/20" },
     {
       title: "Councils and Local Authorities",
       icon: "🏛️",
-      color: "bg-accent-4",
+      color: "bg-[#f8845b]/20",
     },
     {
       title: "Therapists & Social Workers",
       icon: "👨‍⚕️",
-      color: "bg-accent",
+      color: "bg-[#f4b75a]/20",
     },
     {
       title: "Parents of neurodiverse children",
       icon: "👨‍👩‍👧‍",
-      color: "bg-accent-2",
+      color: "bg-[#c5d4c1]/20",
     },
   ];
 
@@ -39,7 +39,7 @@ const WhoItsForSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-black mb-6">
+          <h2 className="text-4xl font-bold text-[#2a2d34] mb-6">
             Who It&apos;s For
           </h2>
         </motion.div>
@@ -53,14 +53,14 @@ const WhoItsForSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="text-center hover:scale-105 transition-transform">
+              <Card className="text-center hover:scale-105 transition-transform bg-white border border-gray-100 shadow-sm hover:shadow-md">
                 <CardContent className="p-4">
                   <div
-                    className={`w-10 h-10 ${item.color} rounded-full flex items-center justify-center mx-auto mb-4`}
+                    className={`w-10 h-10 ${item.color} rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-200`}
                   >
                     <span className="text-xl">{item.icon}</span>
                   </div>
-                  <h3 className="font-semibold text-black text-sm">
+                  <h3 className="font-semibold text-[#2a2d34] text-sm">
                     {item.title}
                   </h3>
                 </CardContent>

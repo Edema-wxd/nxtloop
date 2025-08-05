@@ -22,10 +22,10 @@ const ChildCenteredSection = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-black">
+            <h2 className="text-4xl font-bold text-[#2a2d34]">
               Designed Around the Child
             </h2>
-            <p className="text-xl text-gray-800 italic">
+            <p className="text-xl text-[#2a2d34]/80 italic">
               &ldquo;Nestloop doesn&apos;t just log data — it listens to
               it.&rdquo;
             </p>
@@ -40,10 +40,10 @@ const ChildCenteredSection = () => {
                   viewport={{ once: true }}
                   whileHover={{ x: 10 }}
                 >
-                  <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-sm">✓</span>
+                  <div className="w-6 h-6 bg-[#c5d4c1] rounded-full flex items-center justify-center mt-1">
+                    <span className="text-[#2a2d34] text-sm">✓</span>
                   </div>
-                  <span className="text-gray-700">{item}</span>
+                  <span className="text-[#2a2d34]/80">{item}</span>
                 </motion.li>
               ))}
             </ul>
@@ -55,20 +55,20 @@ const ChildCenteredSection = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-gradient-to-br from-accent/10 to-accent-3/10 border-0">
+            <Card className="bg-gradient-to-br from-[#f4b75a]/10 to-[#9f6b99]/10 border border-gray-100 shadow-sm">
               <CardContent className="p-8">
                 <div className="text-center">
                   <motion.div
-                    className="w-24 h-24 bg-accent rounded-full flex items-center justify-center mx-auto mb-6"
+                    className="w-24 h-24 bg-[#f8845b] rounded-full flex items-center justify-center mx-auto mb-6"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   >
                     <span className="text-white text-4xl">📊</span>
                   </motion.div>
-                  <h3 className="text-2xl font-semibold text-black mb-4">
+                  <h3 className="text-2xl font-semibold text-[#2a2d34] mb-4">
                     Visual Progress Tracking
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-[#2a2d34]/80">
                     Real-time insights that help everyone understand and support
                     the child&apos;s journey.
                   </p>

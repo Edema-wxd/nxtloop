@@ -8,20 +8,20 @@ const WhyNestloopSection = () => {
     {
       title: "Built for non-techy carers",
       desc: "Intuitive UI that anyone can use, regardless of technical experience.",
-      icon: "",
-      color: "bg-accent",
+      icon: "💻",
+      color: "bg-[#f4b75a]",
     },
     {
       title: "Scalable from 1 to 1,000",
       desc: "Grows with your needs, from individual families to large organizations.",
-      icon: "",
-      color: "bg-accent-3",
+      icon: "📈",
+      color: "bg-[#9f6b99]",
     },
     {
       title: "GDPR, Ofsted & Safeguarding Ready",
       desc: "Built with compliance and security at the core.",
-      icon: "",
-      color: "bg-accent-4",
+      icon: "🔒",
+      color: "bg-[#f8845b]",
     },
   ];
 
@@ -35,8 +35,10 @@ const WhyNestloopSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-black mb-6">Why Nestloop?</h2>
-          <p className="text-xl text-gray-800 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-[#2a2d34] mb-6">
+            Why Nestloop?
+          </h2>
+          <p className="text-xl text-[#2a2d34]/80 max-w-3xl mx-auto">
             No other UK platform blends care coordination, SOS Alerts, emotional
             support, and a trusted SEND-focused marketplace, built for families
             raising children with special needs.
@@ -52,7 +54,7 @@ const WhyNestloopSection = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="text-center hover:scale-105 transition-transform">
+              <Card className="text-center hover:scale-105 transition-transform bg-white border border-gray-100 shadow-sm hover:shadow-md">
                 <CardContent className="p-6">
                   <motion.div
                     className={`w-16 h-16 ${reason.color} rounded-full flex items-center justify-center mx-auto mb-4`}
@@ -61,10 +63,10 @@ const WhyNestloopSection = () => {
                   >
                     <span className="text-white text-2xl">{reason.icon}</span>
                   </motion.div>
-                  <h3 className="text-xl font-semibold text-black mb-3">
+                  <h3 className="text-xl font-semibold text-[#2a2d34] mb-3">
                     {reason.title}
                   </h3>
-                  <p className="text-gray-700">{reason.desc}</p>
+                  <p className="text-[#2a2d34]/80">{reason.desc}</p>
                 </CardContent>
               </Card>
             </motion.div>

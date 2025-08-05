@@ -10,14 +10,14 @@ const TestimonialsSection = () => {
         "We've never felt more in sync as a care team. Nestloop changed everything.",
       author: "Children's Home Manager, Birmingham",
       initial: "C",
-      color: "bg-accent",
+      color: "bg-[#f4b75a]",
     },
     {
       quote:
         "It gave my foster child a voice — even when he couldn't speak it out loud.",
       author: "Foster Carer, Manchester",
       initial: "F",
-      color: "bg-accent",
+      color: "bg-[#c5d4c1]",
     },
   ];
 
@@ -31,7 +31,9 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-black mb-6">Testimonials</h2>
+          <h2 className="text-4xl font-bold text-[#2a2d34] mb-6">
+            Testimonials
+          </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -43,7 +45,7 @@ const TestimonialsSection = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white/80 border border-gray-100">
+              <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <motion.div
@@ -51,16 +53,15 @@ const TestimonialsSection = () => {
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <span className="text-black text-2xl p-2
-                        font-bold">
+                      <span className="text-[#2a2d34] text-2xl p-2 font-bold">
                         {testimonial.initial}
                       </span>
                     </motion.div>
                     <div>
-                      <p className="text-gray-700 mb-4 italic">
+                      <p className="text-[#2a2d34]/80 mb-4 italic">
                         &ldquo;{testimonial.quote}&rdquo;
                       </p>
-                      <p className="font-semibold text-black">
+                      <p className="font-semibold text-[#2a2d34]">
                         {testimonial.author}
                       </p>
                     </div>
