@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,14 +73,8 @@ export default function Header() {
         <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo Section */}
           <div className="flex items-center space-x-2 sm:space-x-3 animate-scale-in">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 hover:shadow-lg">
-              <span className="text-white font-bold text-sm sm:text-base">
-                N
-              </span>
-            </div>
-            <span className="text-xl sm:text-2xl font-bold text-black hover:text-accent transition-colors duration-200">
-              Nestloop
-            </span>
+        
+            <Image src="/images/logo.png" alt="Nestloop" width={120} height={120} />
           </div>
 
           {/* Desktop Navigation */}
