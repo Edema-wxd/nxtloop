@@ -53,17 +53,6 @@ const HowItWorksSection = () => {
     },
   ];
 
-  // Responsive SVG path generator for mobile (gentle S-curve)
-  const getMobileCurvePath = (stepCount: number) => {
-    let path = `M 50 0 `;
-    for (let i = 1; i < stepCount; i++) {
-      const y = i * 140;
-      const x = i % 2 === 0 ? 50 : 70;
-      path += `Q ${x} ${y - 70}, 50 ${y} `;
-    }
-    return path;
-  };
-
   return (
     <section id="how-it-works" className="py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -160,82 +149,66 @@ const HowItWorksSection = () => {
             </div>
           </div>
 
-          {/* Mobile vertical S-curve */}
-          <div
-            className="md:hidden w-full flex flex-col items-center relative"
-            style={{ height: steps.length * 160 }}
-          >
-            <svg
-              width="100"
-              height={steps.length * 160}
-              viewBox={`0 0 100 ${steps.length * 160}`}
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="absolute left-1/2 -translate-x-1/2 top-0"
-              preserveAspectRatio="none"
-            >
-              <motion.path
-                d={getMobileCurvePath(steps.length)}
-                stroke="#f4b75a"
-                strokeWidth="5"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 1.2, ease: "easeInOut" }}
-                style={{ filter: "drop-shadow(0 2px 8px #f4b75a33)" }}
-              />
-            </svg>
-            {steps.map((step, idx) => (
-              <div
-                key={idx}
-                className={`flex flex-col items-center absolute left-1/2 -translate-x-1/2 mb-10 w-full px-4`}
-                style={{ top: idx * 160 }}
-              >
+          {/* Mobile vertical timeline */}
+          <div className="md:hidden w-full max-w-lg mx-auto">
+            {/* Vertical timeline line */}
+            <div className="relative">
+              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#f4b75a] to-[#9f6b99] -translate-x-1/2" />
+
+              {steps.map((step, idx) => (
                 <motion.div
-                  className="bg-white shadow-lg rounded-full border-4"
-                  style={{
-                    borderColor: step.color,
-                    color: step.color,
-                    width: 60,
-                    height: 60,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 26,
-                  }}
-                  initial={{ scale: 0.7, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  key={idx}
+                  className="relative flex flex-col items-center mb-12 last:mb-0"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  {step.icon}
+                  {/* Step icon on timeline */}
+                  <div className="relative z-10 mb-6">
+                    <div
+                      className="w-16 h-16 rounded-full border-4 bg-white shadow-lg flex items-center justify-center"
+                      style={{
+                        borderColor: step.color,
+                        color: step.color,
+                        fontSize: 24,
+                      }}
+                    >
+                      {step.icon}
+                    </div>
+                    {/* Step number badge */}
+                    <span
+                      className="absolute -top-2 -right-2 bg-white text-xs font-bold rounded-full border-2 px-2 py-1"
+                      style={{
+                        borderColor: step.color,
+                        color: step.color,
+                      }}
+                    >
+                      {idx + 1}
+                    </span>
+                  </div>
+
+                  {/* Step content card */}
+                  <div
+                    className="bg-white rounded-xl shadow-md p-6 w-full max-w-sm border-l-4"
+                    style={{
+                      borderLeftColor: step.color,
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-[#2a2d34] mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-[#2a2d34]/80 text-sm leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
                 </motion.div>
-                <span
-                  className="text-5xl font-extrabold absolute -z-10 top-8 left-1/2 -translate-x-1/2 pointer-events-none select-none"
-                  style={{ opacity: 0.13, color: step.color }}
-                >
-                  {idx + 1}
-                </span>
-                <div
-                  className={`w-full max-w-xs text-center mt-4 bg-white/90 rounded-xl shadow-md py-4 px-2 ${
-                    idx % 2 === 0 ? "ml-8" : "mr-8"
-                  }`}
-                  style={{
-                    borderLeft:
-                      idx % 2 === 0 ? `4px solid ${step.color}` : undefined,
-                    borderRight:
-                      idx % 2 !== 0 ? `4px solid ${step.color}` : undefined,
-                  }}
-                >
-                  <h3 className="text-base font-bold text-[#2a2d34] mb-1">
-                    {step.title}
-                  </h3>
-                  <p className="text-[#2a2d34]/80 text-sm">{step.desc}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
+
+        
       </div>
     </section>
   );
