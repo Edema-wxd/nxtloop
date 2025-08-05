@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -133,22 +134,12 @@ export default function Header() {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
           >
-            <div className="relative w-6 h-6">
-              <span
-                className={`absolute top-1/2 left-1/2 w-5 h-0.5 bg-black transition-all duration-300 ${
-                  isMenuOpen ? "rotate-45" : "-translate-x-1/2 -translate-y-1/2"
-                }`}
-              />
-              <span
-                className={`absolute top-1/2 left-1/2 w-5 h-0.5 bg-black transition-all duration-300 ${
-                  isMenuOpen ? "opacity-0" : "-translate-x-1/2 -translate-y-1/2"
-                }`}
-              />
-              <span
-                className={`absolute top-1/2 left-1/2 w-5 h-0.5 bg-black transition-all duration-300 ${
-                  isMenuOpen ? "-rotate-45" : "-translate-x-1/2 translate-y-1/2"
-                }`}
-              />
+            <div className="relative w-fit   h-fit">
+              {isMenuOpen ? (
+                <FaTimes className="text-black text-2xl" />
+              ) : (
+                <FaBars className="text-black text-2xl" />
+              )}
             </div>
           </button>
         </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { FaChartLine, FaCheck } from "react-icons/fa6";
 
 const ChildCenteredSection = () => {
   const features = [
@@ -40,10 +41,15 @@ const ChildCenteredSection = () => {
                   viewport={{ once: true }}
                   whileHover={{ x: 10 }}
                 >
-                  <div className="w-6 h-6 bg-[#c5d4c1] rounded-full flex items-center justify-center mt-1">
-                    <span className="text-[#2a2d34] text-sm">✓</span>
+              
+                  <div className="flex items-start w-full max-w-xs sm:max-w-none">
+                    <div className="w-6 h-6 bg-[#c5d4c1] rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                      <span className="text-[#2a2d34] text-sm font-bold">
+                        <FaCheck />
+                      </span>
+                    </div>
+                    <span className="text-[#2a2d34]/80 ml-3">{item}</span>
                   </div>
-                  <span className="text-[#2a2d34]/80">{item}</span>
                 </motion.li>
               ))}
             </ul>
@@ -63,7 +69,7 @@ const ChildCenteredSection = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <span className="text-white text-4xl">📊</span>
+                    <FaChartLine className="text-white text-4xl" />
                   </motion.div>
                   <h3 className="text-2xl font-semibold text-[#2a2d34] mb-4">
                     Visual Progress Tracking

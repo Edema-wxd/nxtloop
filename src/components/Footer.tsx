@@ -30,11 +30,7 @@ export default function Footer() {
                   Pricing
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-slate-800 transition-colors">
-                  Security
-                </a>
-              </li>
+              
             </ul>
           </div>
 
@@ -69,16 +65,8 @@ export default function Footer() {
                   About
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-slate-800 transition-colors">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-slate-800 transition-colors">
-                  Careers
-                </a>
-              </li>
+            
+            
             </ul>
           </div>
         </div>
