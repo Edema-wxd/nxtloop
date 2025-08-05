@@ -55,8 +55,8 @@ const AboutSection = () => {
           <p className="text-xl text-[#2a2d34]/80 max-w-3xl mx-auto">
             Nestloop is a smart, all-in-one care platform built for real-life
             settings. It simplifies daily care, reduces admin, and puts child
-            wellbeing at the centre — using emotion journaling, wearable data,
-            and smart alerts to support every child&apos;s journey.
+            wellbeing at the centre using emotion journaling, wearable data, and
+            smart alerts to support every child&apos;s journey.
           </p>
         </motion.div>
 

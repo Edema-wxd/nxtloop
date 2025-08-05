@@ -9,7 +9,7 @@ const ChildCenteredSection = () => {
     "Trauma-informed care tools",
     "Personalised routines and timelines",
     "Children take part in their own care through planners, reward charts & event scheduling",
-    "Visual progress that helps everyone grow — together",
+    "Visual progress that helps everyone grow  together",
   ];
 
   return (
@@ -27,7 +27,7 @@ const ChildCenteredSection = () => {
               Designed Around the Child
             </h2>
             <p className="text-xl text-[#2a2d34]/80 italic">
-              &ldquo;Nestloop doesn&apos;t just log data — it listens to
+              &ldquo;Nestloop doesn&apos;t just log data it listens to
               it.&rdquo;
             </p>
             <ul className="space-y-4">
@@ -41,7 +41,6 @@ const ChildCenteredSection = () => {
                   viewport={{ once: true }}
                   whileHover={{ x: 10 }}
                 >
-              
                   <div className="flex items-start w-full max-w-xs sm:max-w-none">
                     <div className="w-6 h-6 bg-[#c5d4c1] rounded-full flex items-center justify-center mt-1 flex-shrink-0">
                       <span className="text-[#2a2d34] text-sm font-bold">

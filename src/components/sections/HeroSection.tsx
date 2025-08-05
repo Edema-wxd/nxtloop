@@ -42,20 +42,17 @@ const HeroSection = () => {
                 size="lg"
                 className="bg-[#f8845b] text-white hover:bg-[#f8845b]/90"
               >
-                Book a Demo
+                Join the waitlist
               </Button>
               <Button
                 size="lg"
+                onClick={() => {
+                  window.location.href = "#features";
+                }}
                 variant="outline"
                 className="border-[#2a2d34] text-[#2a2d34] hover:bg-[#2a2d34] hover:text-white"
               >
                 Explore Features
-              </Button>
-              <Button
-                size="lg"
-                className="bg-[#f4b75a] text-[#2a2d34] hover:bg-[#f4b75a]/90"
-              >
-                Try Free for 30 Days
               </Button>
             </motion.div>
           </motion.div>
@@ -65,8 +62,6 @@ const HeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-      
-      
             <motion.div
               className="bg-white rounded-2xl p-4 md:p-8 shadow-2xl border border-gray-100 flex items-center justify-center aspect-square max-w-[500px] mx-auto"
               whileHover={{ y: -10 }}

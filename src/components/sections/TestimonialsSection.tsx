@@ -14,7 +14,7 @@ const TestimonialsSection = () => {
     },
     {
       quote:
-        "It gave my foster child a voice — even when he couldn't speak it out loud.",
+        "It gave my foster child a voice  even when he couldn't speak it out loud.",
       author: "Foster Carer, Manchester",
       initial: "F",
       color: "bg-[#c5d4c1]",

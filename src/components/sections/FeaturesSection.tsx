@@ -38,7 +38,7 @@ const FeaturesSection = () => {
     },
     {
       title: "Caregiver Tools",
-      desc: "Shift logging, task management, secure documentation — all streamlined in one place.",
+      desc: "Shift logging, task management, secure documentation  all streamlined in one place.",
       icon: <FaBookOpen className="text-2xl text-[#c5d4c1]" />,
       color: "bg-[#c5d4c1]/20",
       accent: "text-[#c5d4c1]",

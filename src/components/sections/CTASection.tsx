@@ -33,14 +33,17 @@ const CTASection = () => {
               size="lg"
               className="bg-[#f8845b] text-white hover:bg-[#f8845b]/90"
             >
-              Start Free Trial
+              Join the waitlist
             </Button>
             <Button
               size="lg"
               variant="outline"
+              onClick={() => {
+                window.location.href = "#features";
+              }}  
               className="border-white text-black hover:bg-white hover:text-[#2a2d34]"
             >
-              Book a Demo
+              Explore Features
             </Button>
           </motion.div>
         </motion.div>
