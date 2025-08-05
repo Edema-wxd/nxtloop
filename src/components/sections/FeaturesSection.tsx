@@ -2,62 +2,72 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  FaChild,
+  FaUserGroup,
+  FaGraduationCap,
+  FaBuilding,
+  FaUser,
+  FaBookOpen,
+  FaBell,
+} from "react-icons/fa6";
+import { FaShoppingBag } from "react-icons/fa";
 
 const FeaturesSection = () => {
   const features = [
     {
       title: "Emotion Journaling",
       desc: "Children log their feelings with simple visuals or words. Caregivers add notes for context.",
-      icon: "👶",
+      icon: <FaChild className="text-2xl text-[#f4b75a]" />,
       color: "bg-[#f4b75a]/20",
       accent: "text-[#f4b75a]",
     },
     {
       title: "SOS Alerts",
       desc: "Alert your care network when you need urgent help. Support is always just a tap away.",
-      icon: "👨‍👧‍👦",
+      icon: <FaBell className="text-2xl text-[#f8845b]" />,
       color: "bg-[#f8845b]/20",
       accent: "text-[#f8845b]",
     },
     {
       title: "Predictive AI Alerts",
       desc: "Detect patterns in mood, sleep, or behaviour changes. Intervene early, prevent escalation.",
-      icon: "🎓",
+      icon: <FaGraduationCap className="text-2xl text-[#9f6b99]" />,
       color: "bg-[#9f6b99]/20",
       accent: "text-[#9f6b99]",
     },
     {
       title: "Caregiver Tools",
       desc: "Shift logging, task management, secure documentation — all streamlined in one place.",
-      icon: "🛠️",
+      icon: <FaBookOpen className="text-2xl text-[#c5d4c1]" />,
       color: "bg-[#c5d4c1]/20",
       accent: "text-[#c5d4c1]",
     },
     {
       title: "Therapist & Social Worker Access",
       desc: "Permissioned access lets external professionals view only what they need.",
-      icon: "👨‍⚕️",
+      icon: <FaUser className="text-2xl text-[#f4b75a]" />,
       color: "bg-[#f4b75a]/20",
       accent: "text-[#f4b75a]",
     },
     {
       title: "Community",
       desc: "Connect with other parents, share experiences, ask questions, and get support.",
-      icon: "👨‍👩‍👧‍👦",
+      icon: <FaUserGroup className="text-2xl text-[#9f6b99]" />,
       color: "bg-[#9f6b99]/20",
       accent: "text-[#9f6b99]",
     },
     {
       title: "Marketplace",
       desc: "Buy, sell, or swap trusted care items and therapy tools with other parents.",
-      icon: "🛍️",
+      icon: <FaShoppingBag className="text-2xl text-[#c5d4c1]" />,
       color: "bg-[#c5d4c1]/20",
       accent: "text-[#c5d4c1]",
     },
     {
       title: "Near Me Recommendations",
       desc: "Activity suggestions, events, and sensory-friendly spaces based on location.",
-      icon: "📍",
+      icon: <FaBuilding className="text-2xl text-[#f8845b]" />,
       color: "bg-[#f8845b]/20",
       accent: "text-[#f8845b]",
     },

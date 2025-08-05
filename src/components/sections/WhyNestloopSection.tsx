@@ -2,26 +2,27 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { FaComputer, FaChartLine, FaLock } from "react-icons/fa6";
 
 const WhyNestloopSection = () => {
   const reasons = [
     {
       title: "Built for non-techy carers",
       desc: "Intuitive UI that anyone can use, regardless of technical experience.",
-      icon: "💻",
-      color: "bg-[#f4b75a]",
+      icon: <FaComputer className="text-2xl text-[#f4b75a]" />,
+      color: "bg-[#f4b75a]/20",
     },
     {
       title: "Scalable from 1 to 1,000",
       desc: "Grows with your needs, from individual families to large organizations.",
-      icon: "📈",
-      color: "bg-[#9f6b99]",
+      icon: <FaChartLine className="text-2xl text-[#9f6b99]" />,
+      color: "bg-[#9f6b99]/20",
     },
     {
       title: "GDPR, Ofsted & Safeguarding Ready",
       desc: "Built with compliance and security at the core.",
-      icon: "🔒",
-      color: "bg-[#f8845b]",
+      icon: <FaLock className="text-2xl text-[#f8845b]" />,
+      color: "bg-[#f8845b]/20",
     },
   ];
 

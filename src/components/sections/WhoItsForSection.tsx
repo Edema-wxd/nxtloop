@@ -2,29 +2,46 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  FaBuilding,
+  FaGraduationCap,
+  FaHouseChimney,
+  FaUser,
+  FaUserDoctor,
+} from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa";
+import { MdFamilyRestroom } from "react-icons/md";
 
 const WhoItsForSection = () => {
   const userTypes = [
     {
-      title: "Children&apos;s Home Staff",
-      icon: "🏠",
+      title: "Children's Home Staff",
+      icon: <FaHouseChimney className="text-2xl text-[#f4b75a]" />,
       color: "bg-[#f4b75a]/20",
     },
-    { title: "Foster Carers", icon: "👨‍👦", color: "bg-[#c5d4c1]/20" },
-    { title: "SENCOs & Schools", icon: "🎓", color: "bg-[#9f6b99]/20" },
+    {
+      title: "Foster Carers",
+      icon: <FaHeart className="text-2xl text-[#c5d4c1]" />,
+      color: "bg-[#c5d4c1]/20",
+    },
+    {
+      title: "SENCOs & Schools",
+      icon: <FaGraduationCap className="text-2xl text-[#9f6b99]" />,
+      color: "bg-[#9f6b99]/20",
+    },
     {
       title: "Councils and Local Authorities",
-      icon: "🏛️",
+      icon: <FaBuilding className="text-2xl text-[#f8845b]" />,
       color: "bg-[#f8845b]/20",
     },
     {
       title: "Therapists & Social Workers",
-      icon: "👨‍⚕️",
+      icon: <FaUserDoctor className="text-2xl text-[#f4b75a]" />,
       color: "bg-[#f4b75a]/20",
     },
     {
       title: "Parents of neurodiverse children",
-      icon: "👨‍👩‍👧‍",
+      icon: <MdFamilyRestroom className="text-2xl text-[#c5d4c1]" />,
       color: "bg-[#c5d4c1]/20",
     },
   ];

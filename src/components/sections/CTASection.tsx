@@ -38,7 +38,7 @@ const CTASection = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#2a2d34]"
+              className="border-white text-black hover:bg-white hover:text-[#2a2d34]"
             >
               Book a Demo
             </Button>

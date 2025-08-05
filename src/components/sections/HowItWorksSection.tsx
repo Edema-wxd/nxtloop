@@ -2,43 +2,45 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { FaUser, FaUsers, FaComments, FaBell } from "react-icons/fa6";
+import { FaShoppingBag, FaTasks } from "react-icons/fa";
 
 const HowItWorksSection = () => {
   const steps = [
     {
       title: "Create Your LoopCare Profile",
       desc: "Sign up and set up your profile to reflect your child's needs, preferred communication, and care routines.",
-      icon: "👤",
+      icon: <FaUser className="text-2xl text-[#f4b75a]" />,
       color: "bg-[#f4b75a]/20",
     },
     {
       title: "Build Your Care Support Network",
       desc: "Add family, friends, caregivers, and therapists to your private loop so everyone stays aligned and informed.",
-      icon: "👥",
+      icon: <FaUsers className="text-2xl text-[#c5d4c1]" />,
       color: "bg-[#c5d4c1]/20",
     },
     {
       title: "Organize with Your Loop TaskBoard",
       desc: "Plan and delegate daily tasks, routines, and appointments — all in one shared space.",
-      icon: "📋",
+      icon: <FaTasks className="text-2xl text-[#9f6b99]" />,
       color: "bg-[#9f6b99]/20",
     },
     {
       title: "Join the Community",
       desc: "Ask questions, share wins, and connect with other parents navigating similar journeys.",
-      icon: "💬",
+      icon: <FaComments className="text-2xl text-[#f8845b]" />,
       color: "bg-[#f8845b]/20",
     },
     {
       title: "Explore the Marketplace",
       desc: "Buy, sell, or swap care essentials, therapy tools, and educational resources.",
-      icon: "🛍️",
+      icon: <FaShoppingBag className="text-2xl text-[#f4b75a]" />,
       color: "bg-[#f4b75a]/20",
     },
     {
       title: "Use SOS When You Need Help",
       desc: "Instantly alert your network in moments of stress, emergencies, or burnout.",
-      icon: "🆘",
+      icon: <FaBell className="text-2xl text-[#9f6b99]" />,
       color: "bg-[#9f6b99]/20",
     },
   ];

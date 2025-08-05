@@ -2,18 +2,41 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  FaHouseChimney,
+  FaUserGroup,
+  FaGraduationCap,
+  FaBuilding,
+  FaUser,
+} from "react-icons/fa6";
 
 const AboutSection = () => {
   const userTypes = [
-    { title: "Children's Homes", icon: "🏠", color: "bg-[#f4b75a]/20" },
-    { title: "Foster Carers", icon: "👨‍👧‍", color: "bg-[#c5d4c1]/20" },
+    {
+      title: "Children's Homes",
+      icon: <FaHouseChimney className="text-2xl text-[#f4b75a]" />, // Add icon color
+      color: "bg-[#f4b75a]/20",
+    },
+    {
+      title: "Foster Carers",
+      icon: <FaUserGroup className="text-2xl text-[#c5d4c1]" />,
+      color: "bg-[#c5d4c1]/20",
+    },
     {
       title: "Special Education Settings",
-      icon: "🎓",
+      icon: <FaGraduationCap className="text-2xl text-[#9f6b99]" />,
       color: "bg-[#9f6b99]/20",
     },
-    { title: "Local Authorities", icon: "🏛️", color: "bg-[#f8845b]/20" },
-    { title: "Parents & Guardians", icon: "👨‍👧‍", color: "bg-[#f4b75a]/20" },
+    {
+      title: "Local Authorities",
+      icon: <FaBuilding className="text-2xl text-[#f8845b]" />,
+      color: "bg-[#f8845b]/20",
+    },
+    {
+      title: "Parents & Guardians",
+      icon: <FaUser className="text-2xl text-[#f4b75a]" />,
+      color: "bg-[#f4b75a]/20",
+    },
   ];
 
   return (
