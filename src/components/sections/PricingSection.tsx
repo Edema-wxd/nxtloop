@@ -113,9 +113,7 @@ const PricingSection = () => {
                       </p>
                     ) : (
                       <>
-                        <span className="text-[#2a2d34] text-lg font-medium">
-                          £
-                        </span>
+                        
                         <p className="text-[#2a2d34] text-3xl font-bold">
                           {plan.price}
                         </p>
