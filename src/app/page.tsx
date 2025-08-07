@@ -3,10 +3,14 @@
 import {
   HeroSection,
   AboutSection,
+  ServicesSection,
   FeaturesSection,
   ChildCenteredSection,
   HowItWorksSection,
+  TrustSafetySection,
   TestimonialsSection,
+  MobileAppSection,
+  CarerJobsSection,
   PricingSection,
   WhoItsForSection,
   WhyNestloopSection,
@@ -18,10 +22,14 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <HeroSection />
       <AboutSection />
+      <ServicesSection />
       <FeaturesSection />
       <ChildCenteredSection />
       <HowItWorksSection />
+      <TrustSafetySection />
       <TestimonialsSection />
+      <MobileAppSection />
+      <CarerJobsSection />
       <PricingSection />
       <WhoItsForSection />
       <WhyNestloopSection />

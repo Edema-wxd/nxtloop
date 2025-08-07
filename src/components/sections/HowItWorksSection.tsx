@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { FaUser, FaUsers, FaComments, FaBell } from "react-icons/fa6";
 import { FaShoppingBag, FaTasks } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 const brandColors = [
   "#f4b75a", // gold
@@ -18,38 +20,104 @@ const HowItWorksSection = () => {
     {
       title: "Create Your LoopCare Profile",
       desc: "Sign up and set up your profile to reflect your child's needs, preferred communication, and care routines.",
+      detailedDesc:
+        "Start by creating a comprehensive profile that captures your child's unique needs, preferences, and care requirements. Include information about their developmental stage, any special needs, behavioral patterns, and communication preferences. This helps us match you with the right carers and tools.",
       icon: <FaUser />,
       color: brandColors[0],
+      subSteps: [
+        "Complete your family profile",
+        "Add your child's care needs",
+        "Set communication preferences",
+        "Upload relevant documents",
+      ],
     },
     {
       title: "Build Your Care Support Network",
       desc: "Add family, friends, caregivers, and therapists to your private loop so everyone stays aligned and informed.",
+      detailedDesc:
+        "Connect your entire care team in one secure platform. Invite family members, foster carers, therapists, social workers, and other professionals involved in your child's care. Everyone gets access to the information they need while maintaining privacy and security.",
       icon: <FaUsers />,
       color: brandColors[1],
+      subSteps: [
+        "Invite family members",
+        "Add professional carers",
+        "Connect with therapists",
+        "Set permission levels",
+      ],
     },
     {
       title: "Organize with Your Loop TaskBoard",
       desc: "Plan and delegate daily tasks, routines, and appointments all in one shared space.",
+      detailedDesc:
+        "Use our intuitive task management system to organize everything from daily routines to medical appointments. Create care plans, set reminders, track progress, and ensure nothing falls through the cracks. All team members can see and update tasks in real-time.",
       icon: <FaTasks />,
       color: brandColors[2],
+      subSteps: [
+        "Create daily routines",
+        "Set medication reminders",
+        "Schedule appointments",
+        "Track progress",
+      ],
     },
     {
       title: "Join the Community",
       desc: "Ask questions, share wins, and connect with other parents navigating similar journeys.",
+      detailedDesc:
+        "Connect with a supportive community of parents, carers, and professionals who understand your journey. Share experiences, ask questions, and learn from others who have faced similar challenges. Our community is moderated and safe for all families.",
       icon: <FaComments />,
       color: brandColors[3],
+      subSteps: [
+        "Join discussion groups",
+        "Share experiences",
+        "Ask for advice",
+        "Learn from others",
+      ],
     },
     {
       title: "Explore the Marketplace",
       desc: "Buy, sell, or swap care essentials, therapy tools, and educational resources.",
+      detailedDesc:
+        "Access a curated marketplace of trusted care products, therapy tools, and educational resources. Connect with other families to buy, sell, or swap items your child has outgrown. All items are verified and safe for children.",
       icon: <FaShoppingBag />,
       color: brandColors[4],
+      subSteps: [
+        "Browse trusted products",
+        "Sell unused items",
+        "Swap with other families",
+        "Find therapy tools",
+      ],
     },
     {
       title: "Use SOS When You Need Help",
       desc: "Instantly alert your network in moments of stress, emergencies, or burnout.",
+      detailedDesc:
+        "When you need immediate support, our SOS feature instantly notifies your care network. Whether it's a behavioral crisis, medical emergency, or you just need a break, help is just a tap away. Your network can respond with advice, support, or physical assistance.",
       icon: <FaBell />,
       color: brandColors[5],
+      subSteps: [
+        "Send instant alerts",
+        "Get immediate support",
+        "Connect with carers",
+        "Access emergency resources",
+      ],
+    },
+  ];
+
+  const processOverview = [
+    {
+      title: "Assessment & Matching",
+      desc: "We assess your child's needs and match you with qualified carers who have the right experience and skills.",
+      icon: "1",
+    },
+    {
+      title: "Care Planning",
+      desc: "Together with your carer, we create a personalized care plan that addresses your child's specific needs.",
+      icon: "2",
+    },
+    {
+      title: "Ongoing Support",
+      desc: "We provide continuous support, monitoring, and adjustments to ensure the best possible care outcomes.",
+      icon: "3",
     },
   ];
 
@@ -64,20 +132,78 @@ const HowItWorksSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl font-bold text-[#2a2d34] mb-6">
-            How It Works
+            How Nestloop Works
           </h2>
+          <p className="text-[#2a2d34]/60 text-lg max-w-3xl mx-auto">
+            Our comprehensive platform simplifies children&apos;s care
+            management while ensuring every child receives the personalized
+            support they need to thrive.
+          </p>
+        </motion.div>
+
+        {/* Process Overview */}
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-2xl font-bold text-[#2a2d34] mb-8 text-center">
+            Our Care Process
+          </h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {processOverview.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+                  <CardContent className="p-6 text-center h-full flex flex-col">
+                    <div className="w-16 h-16 bg-[#f4b75a]/20 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                      <span className="text-2xl font-bold text-[#f4b75a]">
+                        {step.icon}
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-semibold text-[#2a2d34] mb-3">
+                      {step.title}
+                    </h4>
+                    <p className="text-[#2a2d34]/80 text-sm leading-relaxed flex-grow">
+                      {step.desc}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Detailed Steps */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-2xl font-bold text-[#2a2d34] mb-8 text-center">
+            Platform Features & Workflow
+          </h3>
         </motion.div>
 
         {/* Desktop horizontal curve */}
         <div className="relative w-full flex flex-col items-center">
           <div
             className="hidden md:block w-full relative"
-            style={{ height: 220 }}
+            style={{ height: 280 }}
           >
             <svg
               width="100%"
-              height="200"
-              viewBox="0 0 1000 200"
+              height="260"
+              viewBox="0 0 1000 260"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="absolute left-0 top-0"
@@ -85,12 +211,12 @@ const HowItWorksSection = () => {
             >
               <motion.path
                 d={`
-                  M 0 100
-                  Q 100 0, 200 100
-                  Q 300 200, 400 100
-                  Q 500 0, 600 100
-                  Q 700 200, 800 100
-                  Q 900 0, 1000 100
+                  M 0 130
+                  Q 100 0, 200 130
+                  Q 300 260, 400 130
+                  Q 500 0, 600 130
+                  Q 700 260, 800 130
+                  Q 900 0, 1000 130
                 `}
                 stroke="#f4b75a"
                 strokeWidth="5"
@@ -110,7 +236,7 @@ const HowItWorksSection = () => {
                   style={{
                     left: `calc(${(idx / (steps.length - 1)) * 100}% - 40px)`,
                     position: "absolute",
-                    top: idx % 2 === 0 ? 40 : 120,
+                    top: idx % 2 === 0 ? 40 : 160,
                   }}
                 >
                   <motion.div
@@ -198,9 +324,23 @@ const HowItWorksSection = () => {
                     <h3 className="text-lg font-bold text-[#2a2d34] mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-[#2a2d34]/80 text-sm leading-relaxed">
+                    <p className="text-[#2a2d34]/80 text-sm leading-relaxed mb-4">
                       {step.desc}
                     </p>
+                    <p className="text-[#2a2d34]/70 text-xs leading-relaxed mb-4">
+                      {step.detailedDesc}
+                    </p>
+                    <div className="space-y-2">
+                      {step.subSteps.map((subStep, subIdx) => (
+                        <div
+                          key={subIdx}
+                          className="flex items-center text-xs text-[#2a2d34]/60"
+                        >
+                          <div className="w-1.5 h-1.5 bg-[#f4b75a] rounded-full mr-2"></div>
+                          <span>{subStep}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -208,7 +348,93 @@ const HowItWorksSection = () => {
           </div>
         </div>
 
-        
+        {/* Detailed Steps for Desktop */}
+        <div className="hidden md:block mt-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="group bg-white border border-gray-100 shadow-sm hover:shadow-lg hover:border-[#f4b75a]/20 transition-all duration-300 h-full">
+                  <CardContent className="p-6 h-full flex flex-col">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div
+                        className="w-12 h-12 rounded-full flex items-center justify-center"
+                        style={{
+                          backgroundColor: `${step.color}20`,
+                          color: step.color,
+                        }}
+                      >
+                        {step.icon}
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-[#2a2d34]">
+                          {step.title}
+                        </h4>
+                        <p className="text-sm text-[#2a2d34]/60">
+                          Step {index + 1}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-[#2a2d34]/80 text-sm leading-relaxed flex-grow mb-4">
+                      {step.detailedDesc}
+                    </p>
+                    <div className="space-y-2">
+                      {step.subSteps.map((subStep, subIdx) => (
+                        <div
+                          key={subIdx}
+                          className="flex items-center text-xs text-[#2a2d34]/60"
+                        >
+                          <div className="w-1.5 h-1.5 bg-[#f4b75a] rounded-full mr-2"></div>
+                          <span>{subStep}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <motion.div
+          className="text-center mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-gradient-to-r from-[#f4b75a]/10 to-[#f8845b]/10 rounded-2xl p-8 border border-[#f4b75a]/20">
+            <h3 className="text-2xl font-bold text-[#2a2d34] mb-4">
+              Ready to Get Started?
+            </h3>
+            <p className="text-[#2a2d34]/80 mb-6 max-w-2xl mx-auto">
+              Join thousands of families who trust Nestloop to simplify their
+              children&apos;s care management. Start your journey today and
+              experience the difference our platform makes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-[#f8845b] text-white hover:bg-[#f8845b]/90"
+              >
+                Start your free trial
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#2a2d34] text-[#2a2d34] hover:bg-[#2a2d34] hover:text-white"
+              >
+                Schedule a demo
+              </Button>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
