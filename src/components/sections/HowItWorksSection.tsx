@@ -183,7 +183,7 @@ const HowItWorksSection = () => {
 
         {/* Detailed Steps */}
         <motion.div
-          className="mb-16"
+          className="mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -349,7 +349,7 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Detailed Steps for Desktop */}
-        <div className="hidden md:block mt-20">
+        <div className="hidden md:block mt-36">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {steps.map((step, index) => (
               <motion.div
@@ -401,40 +401,7 @@ const HowItWorksSection = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-gradient-to-r from-[#f4b75a]/10 to-[#f8845b]/10 rounded-2xl p-8 border border-[#f4b75a]/20">
-            <h3 className="text-2xl font-bold text-[#2a2d34] mb-4">
-              Ready to Get Started?
-            </h3>
-            <p className="text-[#2a2d34]/80 mb-6 max-w-2xl mx-auto">
-              Join thousands of families who trust Nestloop to simplify their
-              children&apos;s care management. Start your journey today and
-              experience the difference our platform makes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-[#f8845b] text-white hover:bg-[#f8845b]/90"
-              >
-                Start your free trial
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#2a2d34] text-[#2a2d34] hover:bg-[#2a2d34] hover:text-white"
-              >
-                Schedule a demo
-              </Button>
-            </div>
-          </div>
-        </motion.div>
+     
       </div>
     </section>
   );

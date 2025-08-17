@@ -2,6 +2,7 @@
 
 import {
   HeroSection,
+  AboutSection,
   FeaturesSection,
   ChildCenteredSection,
   HowItWorksSection,
@@ -14,13 +15,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      <AboutSection />
       <FeaturesSection />
       <ChildCenteredSection />
       <HowItWorksSection />
       <TestimonialsSection />
-
       <PricingSection />
-
       <CTASection />
     </div>
   );
