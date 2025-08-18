@@ -21,7 +21,7 @@ const FoundersPage = () => {
   const founders = [
     {
       name: "Iseoluwa Akinyosoye",
-      image: "/images/founders/iseoluwa-akinyosoye.jpg",
+      image: "/images/iseoluwa.jpeg",
       role: "CEO & Founder",
       bio: "Seasoned solicitor with dual LLM degrees and over six years of legal, regulatory, and strategic experience across top-tier institutions. At NestLoop, she leads legal, strategic, and external functions with deep empathy as a parent to a child with complex needs.",
       expertise: [
@@ -41,7 +41,7 @@ const FoundersPage = () => {
 
     {
       name: "Tomilola Ayeni",
-      image: "/images/founders/tomilola-ayeni.jpg",
+      image: "/images/Tomi.jpeg",
       role: "COO & Co-Founder",
       bio: "Operational leader with a unique blend of law, cybersecurity, and care sector experience. She ensures NestLoop’s mission is matched by operational excellence and robust safeguarding systems.",
       expertise: [
@@ -61,7 +61,7 @@ const FoundersPage = () => {
 
     {
       name: "Omotooke Afolabi",
-      image: "/images/founders/omotooke-afolabi.jpg",
+      image: "/images/omotooke.jpeg",
       role: "CTO",
       bio: "Experienced product and technology leader with a track record of delivering scalable, human-centered platforms across health, education, and financial services. At NestLoop, she drives the platform’s vision, architecture, and continuous improvement.",
       expertise: [
@@ -197,34 +197,50 @@ const FoundersPage = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 items-center ${
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
                 {/* Founder Image */}
                 <motion.div
-                  className="relative w-full lg:w-1/2"
+                  className="relative w-full lg:w-1/2 flex justify-center"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
                   <div className="relative">
-                    <div className="w-full h-96 lg:h-[500px] bg-gradient-to-br from-[#f8845b]/20 to-[#9f6b99]/20 rounded-3xl overflow-hidden">
-                      <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-24 h-24 bg-gradient-to-br from-[#f8845b] to-[#9f6b99] rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="text-3xl font-bold text-white">
-                              {founder.name
-                                .split(" ")
-                                .map((n) => n[0])
-                                .join("")}
-                            </span>
-                          </div>
-                          <p className="text-gray-600">Photo coming soon</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-[#f4b75a] to-[#c5d4c1] rounded-full flex items-center justify-center shadow-lg">
-                      <FaQuoteLeft className="w-8 h-8 text-white" />
+                    {/* Square Image Container - Responsive sizing */}
+                    <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] bg-gradient-to-br from-[#f8845b]/20 to-[#9f6b99]/20 rounded-3xl overflow-hidden shadow-lg">
+                      <Image
+                        src={founder.image}
+                        alt={founder.name}
+                        height={500}
+                        width={500}
+                        className="w-full h-full object-cover"
+                        priority={index === 0} // Load first image with priority
+                        onError={(e) => {
+                          // Fallback to placeholder if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = "none";
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `
+                              <div class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                                <div class="text-center">
+                                  <div class="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-[#f8845b] to-[#9f6b99] rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                                      ${founder.name
+                                        .split(" ")
+                                        .map((n) => n[0])
+                                        .join("")}
+                                    </span>
+                                  </div>
+                                  <p class="text-gray-600 text-sm sm:text-base">Photo loading...</p>
+                                </div>
+                              </div>
+                            `;
+                          }
+                        }}
+                      />
                     </div>
                   </div>
                 </motion.div>
@@ -250,7 +266,7 @@ const FoundersPage = () => {
                     </motion.div>
 
                     <motion.h2
-                      className="text-3xl lg:text-4xl font-bold text-[#2a2d34] mb-4"
+                      className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2a2d34] mb-4"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.4 }}
@@ -260,7 +276,7 @@ const FoundersPage = () => {
                     </motion.h2>
 
                     <motion.p
-                      className="text-lg text-[#2a2d34]/80 leading-relaxed mb-6"
+                      className="text-base sm:text-lg text-[#2a2d34]/80 leading-relaxed mb-6"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.5 }}
@@ -281,7 +297,7 @@ const FoundersPage = () => {
                     {founder.expertise.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="bg-white border border-gray-200 text-[#2a2d34] px-3 py-1 rounded-full text-sm font-medium shadow-sm"
+                        className="bg-white border border-gray-200 text-[#2a2d34] px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium shadow-sm"
                       >
                         {skill}
                       </span>
@@ -290,21 +306,21 @@ const FoundersPage = () => {
 
                   {/* Fun Fact */}
                   <motion.div
-                    className="bg-gradient-to-r from-[#f4b75a]/10 to-[#c5d4c1]/10 border border-[#f4b75a]/20 rounded-2xl p-4"
+                    className="bg-gradient-to-r from-[#f4b75a]/10 to-[#c5d4c1]/10 border border-[#f4b75a]/20 rounded-2xl p-3 sm:p-4"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.7 }}
                     viewport={{ once: true }}
                   >
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-[#f4b75a] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <FaHeart className="w-4 h-4 text-white" />
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#f4b75a] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <FaHeart className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-[#2a2d34] mb-1">
+                        <p className="text-xs sm:text-sm font-medium text-[#2a2d34] mb-1">
                           Fun Fact
                         </p>
-                        <p className="text-sm text-[#2a2d34]/80">
+                        <p className="text-xs sm:text-sm text-[#2a2d34]/80">
                           {founder.funFact}
                         </p>
                       </div>
@@ -313,7 +329,7 @@ const FoundersPage = () => {
 
                   {/* Quote */}
                   <motion.blockquote
-                    className="border-l-4 border-[#9f6b99] pl-6 italic text-lg text-[#2a2d34]/90"
+                    className="border-l-4 border-[#9f6b99] pl-4 sm:pl-6 italic text-base sm:text-lg text-[#2a2d34]/90"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.8 }}
