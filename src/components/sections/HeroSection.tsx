@@ -92,7 +92,7 @@ const HeroSection = () => {
                   variant="outline"
                   className="border-2 border-[#9f6b99] text-[#9f6b99] hover:bg-[#9f6b99] hover:text-white w-full sm:w-auto text-lg lg:text-xl px-8 py-6 lg:px-12 lg:py-8 transition-all duration-200 hover:shadow-lg"
                 >
-                  Try Free for 30 Days
+                  Sign Up for Early Access
                 </Button>
               </motion.div>
             </div>

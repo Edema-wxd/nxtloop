@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { FaChartLine, FaCheck } from "react-icons/fa6";
+import { FaCheck } from "react-icons/fa6";
+import Image from "next/image";
 
 const ChildCenteredSection = () => {
   const features = [
@@ -60,26 +60,14 @@ const ChildCenteredSection = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-gradient-to-br from-[#f4b75a]/10 to-[#9f6b99]/10 border border-gray-100 shadow-sm">
-              <CardContent className="p-8">
-                <div className="text-center">
-                  <motion.div
-                    className="w-24 h-24 bg-[#f8845b] rounded-full flex items-center justify-center mx-auto mb-6"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <FaChartLine className="text-white text-4xl" />
-                  </motion.div>
-                  <h3 className="text-2xl font-semibold text-[#2a2d34] mb-4">
-                    Visual Progress Tracking
-                  </h3>
-                  <p className="text-[#2a2d34]/80">
-                    Real-time insights that help everyone understand and support
-                    the child&apos;s journey.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            <Image
+              src="/images/profile.png"
+              alt="Child Centered"
+              width={402}
+              height={714}
+              className="object-contain rounded-3xl w-full h-auto max-h-[714px] aspect-[402/714]"
+              priority
+            />
           </motion.div>
         </div>
       </div>

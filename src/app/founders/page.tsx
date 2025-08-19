@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
@@ -14,7 +13,6 @@ import {
   FaUsers,
   FaRocket,
   FaStar,
-  FaQuoteLeft,
 } from "react-icons/fa";
 
 const FoundersPage = () => {
@@ -30,9 +28,10 @@ const FoundersPage = () => {
         "Strategic Advisory",
         "Investor Relations",
       ],
-      linkedin: "https://linkedin.com/in/iseoluwa-akinyosoye",
+      linkedin:
+        "https://www.linkedin.com/in/iseoluwa-a-97a897210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       twitter: "https://twitter.com/iseoluwaakinyosoye",
-      email: "iseoluwa@nestloop.com",
+      email: "iseoluwaakinyosoye@gmail.com",
       funFact:
         "Licensed solicitor in Nigeria and progressing through the UK Solicitors Regulation Authority process.",
       quote:
@@ -70,13 +69,14 @@ const FoundersPage = () => {
         "User Experience Design",
         "Scalable MVP Development",
       ],
-      linkedin: "https://linkedin.com/in/omotooke-afolabi",
+      linkedin:
+        "https://www.linkedin.com/in/omotooke-scholarstical-afolabi-7166208a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       twitter: "https://twitter.com/omotookeafolabi",
-      email: "omotooke@nestloop.com",
+      email: "afolabischolarstical@gmail.com",
       funFact:
         "Has built platforms at both early-stage startups and large social impact ventures.",
       quote:
-        "Technology should feel like a helping hand, powerful but invisible, always serving the family’s needs first.",
+        "Technology should feel like a helping hand, powerful but invisible, always serving the family's needs first.",
     },
   ];
 

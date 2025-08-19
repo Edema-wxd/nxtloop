@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,13 +73,20 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo Section */}
-          <div className="flex items-center space-x-2 sm:space-x-3 animate-scale-in">
-        
-            <Image src="/images/logo.png" alt="Nestloop" width={120} height={120} />
-          </div>
+          <Link
+            href="/"
+            className="flex items-center space-x-2 sm:space-x-3 animate-scale-in"
+          >
+            <Image
+              src="/images/logo.png"
+              alt="Nestloop"
+              width={120}
+              height={120}
+            />
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-8">
+          <nav className="hidden  items-center space-x-1 xl:space-x-8">
             {[
               { id: "features", label: "Features" },
               { id: "pricing", label: "Pricing" },
@@ -106,7 +114,7 @@ export default function Header() {
           </nav>
 
           {/* Tablet Navigation (simplified) */}
-          <nav className="hidden md:flex lg:hidden items-center space-x-4">
+          <nav className="hidden   lg:hidden items-center space-x-4">
             <a
               href="#features"
               className="text-black hover:text-accent transition-colors duration-200"
@@ -124,7 +132,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100/50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent/20"
+            className=" hidden p-2 rounded-lg hover:bg-gray-100/50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent/20"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
