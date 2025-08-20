@@ -131,10 +131,10 @@ const HowItWorksSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-[#2a2d34] mb-6">
+          <h2 className="text-2xl text-center lg:text-3xl xl:text-4xl font-bold text-[#2a2d34] mb-6">
             How Nestloop Works
           </h2>
-          <p className="text-[#2a2d34]/60 text-lg max-w-3xl mx-auto">
+          <p className="text-[#2a2d34]/60 text-xl max-w-3xl mx-auto">
             Our comprehensive platform simplifies children&apos;s care
             management while ensuring every child receives the personalized
             support they need to thrive.
@@ -400,8 +400,6 @@ const HowItWorksSection = () => {
             ))}
           </div>
         </div>
-
-     
       </div>
     </section>
   );

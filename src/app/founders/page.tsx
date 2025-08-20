@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
   FaLinkedin,
-  FaTwitter,
   FaEnvelope,
   FaHeart,
   FaLightbulb,
@@ -30,7 +29,6 @@ const FoundersPage = () => {
       ],
       linkedin:
         "https://www.linkedin.com/in/iseoluwa-a-97a897210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-      twitter: "https://twitter.com/iseoluwaakinyosoye",
       email: "iseoluwaakinyosoye@gmail.com",
       funFact:
         "Licensed solicitor in Nigeria and progressing through the UK Solicitors Regulation Authority process.",
@@ -49,9 +47,9 @@ const FoundersPage = () => {
         "Cybersecurity",
         "Care Home Management",
       ],
-      linkedin: "https://linkedin.com/in/tomilola-ayeni",
-      twitter: "https://twitter.com/tomilolaayeni",
-      email: "tomilola@nestloop.com",
+      linkedin:
+        "https://www.linkedin.com/in/tomilolaayeni?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      email: "Ayeni.tomilolabukola@gmail.com",
       funFact:
         "Once managed care homes while completing her MBA in Operations and Entrepreneurship.",
       quote:
@@ -71,7 +69,6 @@ const FoundersPage = () => {
       ],
       linkedin:
         "https://www.linkedin.com/in/omotooke-scholarstical-afolabi-7166208a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-      twitter: "https://twitter.com/omotookeafolabi",
       email: "afolabischolarstical@gmail.com",
       funFact:
         "Has built platforms at both early-stage startups and large social impact ventures.",
@@ -355,15 +352,7 @@ const FoundersPage = () => {
                       <FaLinkedin className="w-4 h-4 mr-2" />
                       LinkedIn
                     </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="border-[#9f6b99] text-[#9f6b99] hover:bg-[#9f6b99] hover:text-white transition-colors"
-                      onClick={() => window.open(founder.twitter, "_blank")}
-                    >
-                      <FaTwitter className="w-4 h-4 mr-2" />
-                      Twitter
-                    </Button>
+
                     <Button
                       variant="outline"
                       size="sm"

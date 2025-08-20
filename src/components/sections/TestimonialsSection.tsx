@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-[#2a2d34] mb-6">
+          <h2 className="text-2xl text-center lg:text-3xl xl:text-4xl font-bold text-[#2a2d34] mb-6">
             Testimonials
           </h2>
         </motion.div>

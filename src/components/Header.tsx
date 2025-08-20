@@ -1,14 +1,15 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
 
   // Handle scroll effects
   useEffect(() => {
@@ -19,22 +20,6 @@ export default function Header() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Debounced scroll to section
-  const scrollToSection = useCallback((sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 80; // Approximate header height
-      const elementPosition = element.offsetTop - headerHeight;
-
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth",
-      });
-    }
-    setIsMenuOpen(false);
-    setActiveSection(sectionId);
   }, []);
 
   // Close mobile menu on escape key
@@ -62,6 +47,16 @@ export default function Header() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, [isMenuOpen]);
 
+  // Close mobile menu when navigating
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  const navigationItems = [
+    { id: "features", label: "Features", href: "/features" },
+    { id: "founders", label: "Meet the Founders", href: "/founders" },
+  ];
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -86,58 +81,45 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden  items-center space-x-1 xl:space-x-8">
-            {[
-              { id: "features", label: "Features" },
-              { id: "pricing", label: "Pricing" },
-              { id: "about", label: "About" },
-            ].map((item) => (
-              <a
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-8">
+            {navigationItems.map((item) => (
+              <Link
                 key={item.id}
-                href={`#${item.id}`}
+                href={item.href}
                 className={`nav-link px-3 py-2 rounded-lg transition-all duration-200 hover:bg-gray-100/50 ${
-                  activeSection === item.id
-                    ? "text-accent font-medium"
+                  pathname === item.href
+                    ? "text-[#f4b75a] font-medium"
                     : "text-black"
                 }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.id);
-                }}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
-            <button className="btn-primary pulse-cta text-black ml-4 hover:scale-105 transition-transform duration-200">
-              Log In
-            </button>
           </nav>
 
           {/* Tablet Navigation (simplified) */}
-          <nav className="hidden   lg:hidden items-center space-x-4">
-            <a
-              href="#features"
-              className="text-black hover:text-accent transition-colors duration-200"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("features");
-              }}
-            >
-              Features
-            </a>
-            <button className="btn-primary pulse-cta text-black hover:scale-105 transition-transform duration-200">
-              Log In
-            </button>
+          <nav className="flex lg:hidden items-center space-x-4">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className={`text-black hover:text-accent transition-colors duration-200 ${
+                  pathname === item.href ? "text-accent font-medium" : ""
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className=" hidden p-2 rounded-lg hover:bg-gray-100/50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent/20"
+            className="hidden p-2 rounded-lg hover:bg-gray-100/50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent/20"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
           >
-            <div className="relative w-fit   h-fit">
+            <div className="relative w-fit h-fit">
               {isMenuOpen ? (
                 <FaTimes className="text-black text-2xl" />
               ) : (
@@ -154,32 +136,19 @@ export default function Header() {
           }`}
         >
           <div className="bg-white/95 backdrop-blur-sm border-t border-gray-100/50 py-4 space-y-2">
-            {[
-              { id: "features", label: "Features" },
-              { id: "pricing", label: "Pricing" },
-              { id: "about", label: "About" },
-            ].map((item) => (
-              <a
+            {navigationItems.map((item) => (
+              <Link
                 key={item.id}
-                href={`#${item.id}`}
+                href={item.href}
                 className={`block px-4 py-3 rounded-lg transition-all duration-200 hover:bg-gray-100/50 ${
-                  activeSection === item.id
+                  pathname === item.href
                     ? "text-accent font-medium bg-accent/10"
                     : "text-black"
                 }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.id);
-                }}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
-            <div className="px-4 pt-2">
-              <button className="btn-primary w-full hover:scale-105 transition-transform duration-200">
-                Log In
-              </button>
-            </div>
           </div>
         </div>
       </div>

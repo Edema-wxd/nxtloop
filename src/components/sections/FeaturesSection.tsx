@@ -62,10 +62,10 @@ const FeaturesSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#2a2d34] mb-6 lg:mb-8">
+          <h2 className="text-2xl text-center lg:text-3xl xl:text-4xl font-bold text-[#2a2d34] mb-6 lg:mb-8">
             Core Features
           </h2>
-          <p className="text-[#2a2d34]/60 text-lg lg:text-xl max-w-3xl mx-auto">
+          <p className="text-[#2a2d34]/60 text-xl   max-w-3xl mx-auto">
             Everything you need to provide exceptional care and build a
             supportive network around your child
           </p>
@@ -81,7 +81,7 @@ const FeaturesSection = () => {
               viewport={{ once: true }}
             >
               <Card className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-gray-200 transition-all duration-300 hover:-translate-y-2 h-full">
-                <CardContent className="p-6 lg:p-8">
+                <CardContent className="p-6 lg:p-8 h-fit">
                   <div
                     className={`w-14 h-14 lg:w-16 lg:h-16 ${feature.color} rounded-xl lg:rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200 border border-gray-200`}
                   >
@@ -93,14 +93,6 @@ const FeaturesSection = () => {
                   <p className="text-[#2a2d34]/80 text-sm lg:text-base leading-relaxed mb-6">
                     {feature.desc}
                   </p>
-                  <div className="flex items-center text-sm lg:text-base font-medium text-[#2a2d34]/60 group-hover:text-[#2a2d34]/80 transition-colors">
-                    <span className="mr-2">Learn more</span>
-                    <span
-                      className={`${feature.accent} group-hover:translate-x-1 transition-transform duration-200`}
-                    >
-                      →
-                    </span>
-                  </div>
                 </CardContent>
               </Card>
             </motion.div>

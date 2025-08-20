@@ -23,7 +23,7 @@ const ChildCenteredSection = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-[#2a2d34]">
+            <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-[#2a2d34]">
               Designed Around the Child
             </h2>
             <p className="text-xl text-[#2a2d34]/80 italic">
