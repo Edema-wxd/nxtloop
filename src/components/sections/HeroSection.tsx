@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { FaPlay, FaArrowRight, FaStar } from "react-icons/fa";
+import WaitlistPopup from "@/components/WaitlistPopup";
 
 const HeroSection = () => {
   return (
@@ -70,17 +71,16 @@ const HeroSection = () => {
                   <FaPlay className="w-5 h-5 lg:w-6 lg:h-6 mr-2 lg:mr-3" />
                   Book a Demo
                 </Button>
-                <Button
-                  size="lg"
-                  onClick={() => {
-                    window.location.href = "/features";
-                  }}
-                  variant="outline"
-                  className="border-2 border-[#2a2d34] text-[#2a2d34] hover:bg-[#2a2d34] hover:text-white w-full sm:w-auto text-lg lg:text-xl px-8 py-6 lg:px-12 lg:py-8 transition-all duration-200 hover:shadow-lg"
-                >
-                  Explore Features
-                  <FaArrowRight className="w-5 h-5 lg:w-6 lg:h-6 ml-2 lg:ml-3" />
-                </Button>
+                <WaitlistPopup>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-[#2a2d34] text-[#2a2d34] hover:bg-[#2a2d34] hover:text-white w-full sm:w-auto text-lg lg:text-xl px-8 py-6 lg:px-12 lg:py-8 transition-all duration-200 hover:shadow-lg"
+                  >
+                    Join Waitlist
+                    <FaArrowRight className="w-5 h-5 lg:w-6 lg:h-6 ml-2 lg:ml-3" />
+                  </Button>
+                </WaitlistPopup>
               </motion.div>
             </div>
             <motion.div
@@ -90,11 +90,11 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <Image
-                src="/images/hero-image.png"
+                src="/images/hero.jpeg"
                 alt="A smiling child interacts with a tablet and wearable device, surrounded by supportive adults"
                 width={500}
-                height={500}
-                className="object-contain rounded-3xl"
+                height={700}
+                className="object-contain rounded-3xl aspect-[5/7]"
                 priority
                 loading="eager"
               />
